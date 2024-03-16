@@ -30,8 +30,8 @@ const SignUp = ({ title }) => {
     validate: {
       email: isEmail("Invalid email"),
       name: (value) =>
-        /^[^\d!@#$%^&*()_+=[\]{};:'|,.<>/?`~]*\s[^\d!@#$%^&*()_+=[\]{};:'|,.<>/?`~]*$/.test(
-          value
+        /^(?:[^\d!@#$%^&*()_+=[\]{};:'|,.<>/?`~]{1,7}\s){0,5}[^\d!@#$%^&*()_+=[\]{};:'|,.<>/?`~]{1,7}$/.test(
+          value.trim()
         )
           ? null
           : "Invalid name",
